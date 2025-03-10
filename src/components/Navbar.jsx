@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from "react-router";
 
 function Navbar(props) {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary m-3">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">BlogSitesi</a>
+                <Link to={"/"} className="navbar-brand" >BlogSitesi</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -12,16 +13,16 @@ function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Anasayfa</a>
+                            <Link to="/home" className="nav-link active" aria-current="page" >Anasayfa</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About</a>
+                            <Link to="/about" className="nav-link" href="#">About</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Contact</a>
+                            <Link to="/contact" className="nav-link" href="#">Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link">Postlar</a>
+                            <Link to="blogs" className="nav-link">Postlar</Link>
                         </li>
                     </ul>
                 </div>

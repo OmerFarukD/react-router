@@ -1,14 +1,12 @@
 import React from 'react';
+import {Link} from "react-router";
 
 
-const  blogs = [
-    {id:1, title:'React router nedir?'},
-    {id:2, title:'JavaScript nedir?'},
-    {id:3, title:'C++ nedir?'},
-    {id:4, title:'Java  nedir?'},
-    {id:5, title:'Python nedir?'},
-]
-function BlogList(props) {
+
+function BlogList({ blogs }) {
+
+
+
     return (
         <>
             <table className="table table-info table-striped table-hover ">
@@ -16,6 +14,7 @@ function BlogList(props) {
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Başlık</th>
+                    <th scope="col">İşlemler</th>
 
                 </tr>
                 </thead>
@@ -27,13 +26,14 @@ function BlogList(props) {
                         <tr key={blog.id}>
                             <td>{blog.id}</td>
                             <td>{blog.title}</td>
+                            <td><Link to={`/blogs/${blog.id}`}>Detaya Git</Link></td>
                         </tr>
                     ))
                 }
                 </tbody>
             </table>
 
-            <a href className="btn btn-outline-success">Ekle</a>
+            <Link to="/blog/add" href className="btn btn-outline-success">Ekle</Link>
         </>
 
     );
